@@ -1,0 +1,1 @@
+This is a practice app based on Treehouse's Node REST API course. I completed the course and will build out the front end with React. 
