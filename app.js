@@ -1,14 +1,16 @@
 'use strict'
 
 const express = require('express');
-const app = express();
+const path = require('path');
 const routes = require('./routes');
 const mongoose = require('mongoose');
+const app = express();
 
 // Middleware modules
 const jsonParser = require('body-parser').json;
 const logger = require('morgan');
 
+//app.use('/', express.static(path.join(__dirname, 'public')));
 app.use(logger('dev'));
 app.use(jsonParser());
 
@@ -19,7 +21,17 @@ const db = mongoose.connection;
 db.on('error', (err) => console.log(`connection errror: ${err}`));
 db.once('open', () => console.log(`db connection successful`));
 
-app.use('/questions', routes);
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  if (req.method === 'OPTIONS') {
+    res.header('Access-Control-Header-Methods', 'PUT, POST, DELETE');
+    return res.status(200).json({});
+  }
+  next();
+});
+
+app.use('/api/questions', routes);
 
 app.use((req, res, next) => {
   console.log('In the error creator')
