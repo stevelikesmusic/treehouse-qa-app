@@ -17,12 +17,6 @@ const AnswerSchema = new Schema({
   upVotes: {type: Number, default: 0}
 });
 
-//AnswerSchema.method('update', (updates, callback) => {
-//  console.log(this)
-//  Object.assign(this, updates, {updatedAt: Date.now});
-//  this.parent().save(callback);
-//});
-
 AnswerSchema.method('update', function(updates, callback) {
   Object.assign(this, updates, {updatedAt: new Date()});
   this.parent().save(callback);

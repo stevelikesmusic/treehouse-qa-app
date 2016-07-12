@@ -17,6 +17,7 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.13.4",
+    "moment": "^2.14.1",
     "mongoose": "^4.4.20",
     "morgan": "^1.7.0",
     "react": "^15.2.1",
