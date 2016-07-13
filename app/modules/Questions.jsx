@@ -14,8 +14,6 @@ export default React.createClass({
     
     request.onreadystatechange = () => {
       if (request.readyState === 4 && request.status < 400) {
-        console.log('Response from GET')
-        console.log(JSON.parse(request.responseText))
         this.setState({data: JSON.parse(request.responseText)})
       }
     }
@@ -30,21 +28,24 @@ export default React.createClass({
     const url = `${config.API_BASE}/questions`
     const request = new XMLHttpRequest()
     
-    request.onreadystate = function() {
+    request.onload = function(res) {
       if (request.readyState === 4 && request.status < 400) {
-        console.log('Response from POST')
-        console.log(JSON.parse(request.responseText))
+        let questions = this.state.data
+        let newQuestion = JSON.parse(request.responseText)
+        fetch(url)
+          .then(res => res.json())
+          .then(question => this.setState({data: questions}))
       }
     }.bind(this)
+    
     request.open('POST', url)
     request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    console.log(JSON.stringify(question))
     request.send(JSON.stringify(question))
-  },
-  
-  fetchQuestions() {
-    console.log('Got it')
-    console.log(request.response)
+    
+    let questions = this.state.data
+    question._id = Date.now()
+    let newQuestions = [question].concat(questions)
+    this.setState({data: newQuestions})
   },
   
   render() {
