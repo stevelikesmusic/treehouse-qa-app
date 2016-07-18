@@ -3,62 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Question and Answer App</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react-dom.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.16/browser.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 </head>
 <body>
   <header>
-    <h1>You've Got Questions. We've Got Answer-like Responses</h1>
+    <div class=header-bar>
+      <image class="logo" src=images/logo-1.svg />
+    </div>
   </header>
-  
   <section id="qa" class="container"></section>
-
-<!--
-  <script type="text/babel">
-
-    const QuestionAndAnswer = React.createClass({
-      render: function() {
-        return (
-          <div className="questionAndAnswer">
-            <QuestionForm />
-            <AnswerList />
-          </div>
-          
-        );
-      }
-    });
-
-   
-
-    const AnswerList = React.createClass({
-      render: function() {
-        return (
-          <section className="answerList">
-            <h2>Top Questions</h2>
-            <Answer />
-          </section>
-        );
-      }
-    });
-
-    const Answer = React.createClass({
-      render: function() {
-        return (
-          <div className="answer">A single answer. Yay!</div>
-        );
-      }
-    });
-   
-
-    ReactDOM.render(
-      <QuestionAndAnswer />,
-      document.getElementById('qa')
-    );
-
-  </script>
--->
   <script src="/bundle.js"></script>
 </body>
 </html>

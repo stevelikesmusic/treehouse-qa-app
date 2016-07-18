@@ -1,0 +1,28 @@
+@import '_variables';
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+}
+
+.header-bar {
+  background-color: #689b98;
+  height: 75px;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  width: 75px;
+  display: block;
+  text-align: center;
+  padding-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}

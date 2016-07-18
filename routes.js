@@ -63,6 +63,7 @@ router.get('/:qId', (req, res, next) => {
 // POST /questions/:id/answers
 // Route for creating answers to a question
 router.post('/:qId/answers', (req, res, next) => {
+  console.log(req.body)
     req.question.answers.push(req.body);
     req.question.save()
       .catch(err => next())

@@ -1,18 +1,51 @@
 import React from 'react'
 import config from '../../config'
+import AnswerForm from './AnswerForm'
+import AnswerList from './AnswerList'
 
 export default React.createClass({
+  getInitialState() {
+    return {
+      question: '',
+      createAt: '',
+      answers: [],
+      answerBaseUrl: `${config.API_BASE}/questions/${this.props.params.qId}`
+    }
+  },
+  handleAnswerSubmit(answer) {
+    const url = this.state.answerBaseUrl + '/answers'
+    const request = new XMLHttpRequest()
+    fetch(`${this.state.answerBaseUrl}/answers`, {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      },
+      body: JSON.stringify(answer)
+    })
+      .then(res => res.json())
+      .then(answer => this.fetchAnswers(this.state.answerBaseUrl))
+  },
+  fetchAnswers(url) {
+    fetch(url)
+      .then(res => res.json())
+      .then(question => {
+        this.setState({
+          question: question.text,
+          createdAt: question.createdAt,
+          answers: question.answers
+        })
+      })
+  },
   componentDidMount() {
-    const qId = this.props.params.qID
-    const url = `${config.API_BASE}/questions/${qid}`
-          
+    this.fetchAnswers(this.state.answerBaseUrl)
   },
   render() {
-    const qId = this.props.params.qID
-    const url = `${config.API_BASE}/questions/${qid}`
     return (
       <div>
-        {url}
+        <h2>{this.state.question}</h2>
+        <AnswerList data={this.state.answers} />
+        <AnswerForm onSubmit={this.handleAnswerSubmit} />
       </div>
     )
   }

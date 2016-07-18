@@ -6,14 +6,14 @@ export default React.createClass({
   render() {
     let createdAt = moment(this.props.createdAt).format('MMM Do, YYYY')
     // Need to get the question id for route
-    let route = `/questions/`
+    let route = `/questions/${this.props.id}`
     return (
       <div>
         <Link to={route}>
           <div className="avatar">
-          <span>{this.props.text}</span>
-          <span>Asked on {createdAt}</span>
-        </div>
+            <span>{this.props.text}</span>
+            <span>Asked on {createdAt}</span>
+          </div>
         </Link>
       </div>
     )
