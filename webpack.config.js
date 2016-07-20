@@ -23,6 +23,14 @@ module.exports = {
       {
         test: /\.scss$/,
         loaders: ["style", "css", "sass"]
+      },
+      {
+        test: /\.svg|.png$/,
+        loader: 'file?name=[name].[ext]'
+      },
+      {
+        test: /\.png$/,
+        loader: 'url?limit=300&name=[name].[ext]'
       }
     ]
   }

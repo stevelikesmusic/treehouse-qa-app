@@ -1,18 +1,129 @@
 @import '_variables';
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+@import url('https://fonts.googleapis.com/css?family=Cousine');
 
 body {
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: $body-font;
+}
+
+h1, h2, h3 {
+  font-family: $display-font;
+}
+
+.title {
+  text-align: center;
+  color: $button-color;
+  font-size: 42px;
 }
 
 header {
   width: 100%;
 }
 
+#qa {
+  width: 50%;
+}
+
+.question-form {
+  margin-bottom: 50px;
+  .question-input {
+    width: 85%;
+    padding-left: 10px;
+    border: solid 1px $border-color;
+    border-radius: 5px 0 0 5px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .question-submit {
+    width: 10%;
+    border-radius: 0 5px 5px 0;
+    box-shadow: none;
+    border: solid 5px $button-color;
+    background-color: $button-color;
+    color: $background-color; 
+    height: 44px;
+    font-size: 16px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.questions-title {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: solid 2px darken($border-color, 10%);
+}
+
+
+.question {
+  height: 100px;
+  border-bottom: solid 1px $border-color;
+  a {
+    color: $primary;
+    text-decoration: none;
+    &:visited {
+      color: $primary;
+      
+    }
+  }
+  .question-text {
+    padding-top: 15px;
+    display: block;
+  }
+  .question-date {
+    color: $display-color;
+    font-size: 12px;
+    float: right;
+    padding-top: 10px;
+  }
+}
+
+.answer {
+  height: 100px;
+  border-bottom: solid 1px $border-color;
+  .answer-text {
+    padding-top: 15px;
+    display: block;
+    color: $primary;
+  }
+  .answer-dates {
+    color: $display-color;
+    font-size: 12px;
+    float: right;
+    padding-top: 20px;
+  }
+}
+
+.answer-form {
+  margin-top: 40px;
+  margin-bottom: 50px;
+  textarea {
+    width: 100%;
+    height: 200px;
+    border: solid 1px $border-color;
+    border-radius: 5px;
+    font-size: 16px;
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+  input[type=submit] {
+    color: $background-color;
+    font-size: 12px;
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+    background-color: $button-color;
+  }
+}
+
 .header-bar {
-  background-color: #689b98;
+  background-color: $primary;
   height: 75px;
   margin: 0;
   padding: 0;

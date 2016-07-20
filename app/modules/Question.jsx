@@ -1,6 +1,8 @@
+require('../styles/global.scss')
 import React from 'react'
 import { Link } from 'react-router'
 import moment from 'moment'
+const avatar = require('file!../../public/images/avatar.png')
 
 export default React.createClass({
   render() {
@@ -8,12 +10,11 @@ export default React.createClass({
     // Need to get the question id for route
     let route = `/questions/${this.props.id}`
     return (
-      <div>
+      <div className="question">
         <Link to={route}>
-          <div className="avatar">
-            <span>{this.props.text}</span>
-            <span>Asked on {createdAt}</span>
-          </div>
+          <img src="{avatar}" className="avatar" />
+            <span className="question-text">{this.props.text}</span>
+            <span className="question-date">Asked on {createdAt} </span>
         </Link>
       </div>
     )

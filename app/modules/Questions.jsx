@@ -50,9 +50,8 @@ export default React.createClass({
   
   render() {
     return (
-      <div>
-        <h1>Code Q&A</h1>
-        <h1>{this.state.message}</h1>
+      <div className="questions">
+        <h1 className="title">Code Q&A</h1>
         <QuestionForm onQuestionSubmit={this.handleQuestionSubmit}/>
         <QuestionList data={this.state.data} />
       </div>

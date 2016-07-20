@@ -6,8 +6,8 @@ export default React.createClass({
     let answerNodes = this.props.data.map(answer => {
       return <Answer answerText={answer.text}
                      upVotes={answer.upVotes}
-                     createdAt={answer.createAt}
-                     updateAt={answer.updatedAt}
+                     createdAt={answer.createdAt}
+                     updatedAt={answer.updatedAt}
                      id={answer._id}
                      key={answer._id}></Answer>
     })

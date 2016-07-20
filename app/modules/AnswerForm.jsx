@@ -19,9 +19,9 @@ export default React.createClass({
   },
   render() {
     return (
-      <div className="answerFormContainer">
+      <div className="answer-form">
         <h3>Add an answer</h3>
-        <form className="answerForm" onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <textarea value={this.state.answer} 
                     onChange={this.handleAnswerChange} 
                     placeholder="Your answer..." />

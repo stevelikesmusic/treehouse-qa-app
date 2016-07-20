@@ -43,7 +43,7 @@ export default React.createClass({
   render() {
     return (
       <div>
-        <h2>{this.state.question}</h2>
+        <h2 className="questions-title">{this.state.question}</h2>
         <AnswerList data={this.state.answers} />
         <AnswerForm onSubmit={this.handleAnswerSubmit} />
       </div>

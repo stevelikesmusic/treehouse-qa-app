@@ -23,12 +23,13 @@ export default React.createClass({
   
   render: function() {
     return (
-      <form className="questionForm" onSubmit={this.handleSubmit}>
+      <form className="question-form" onSubmit={this.handleSubmit}>
         <input type="text" 
-             value={this.state.question} 
-             onChange={this.handleQuestionChange} 
-             placeholder="What's your question?" />
-        <input type="submit" value="Ask" />
+               className="question-input"
+               value={this.state.question} 
+               onChange={this.handleQuestionChange} 
+               placeholder="What's your question?" />
+        <input className="question-submit" type="submit" value="Ask" />
       </form>
     );
   }
