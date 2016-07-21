@@ -2,7 +2,8 @@ require('../styles/global.scss')
 import React from 'react'
 import { Link } from 'react-router'
 import moment from 'moment'
-import avatar from '../../public/images/avatar.png'
+//import avatar from '../../public/images/avatar.png'
+const avatar = require('../../public/images/avatar.png')
 
 export default React.createClass({
   render() {

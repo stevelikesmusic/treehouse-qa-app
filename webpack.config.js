@@ -25,7 +25,7 @@ module.exports = {
         loaders: ["style", "css", "sass"]
       },
       {
-        test: /\.svg|.png$/,
+        test: /\.svg$/,
         loader: 'file?name=images/[name].[ext]'
       },
       {
