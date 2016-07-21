@@ -5,7 +5,7 @@ export default React.createClass({
   render() {
     return (
       <div className="answer">
-        <span>{this.props.upVotes}</span>
+        <span className="votes">{this.props.upVotes}</span>
         <span className="answer-text">{this.props.answerText}</span>
         <div className="answer-dates">
           <span>Answered: {this.props.createdAt} | </span>

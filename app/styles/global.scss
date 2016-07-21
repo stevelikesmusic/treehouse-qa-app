@@ -72,31 +72,45 @@ header {
       
     }
   }
+  .avatar {
+    width: 50px;
+    margin-top: 10px;
+    border: solid 2px $border-color;
+    border-radius: 50%;
+    display: inline-block;
+  }
   .question-text {
-    padding-top: 15px;
-    display: block;
+    margin-top: 15px;
+    padding-left: 20px;
+    vertical-align: top;
+    display: inline-block;
   }
   .question-date {
     color: $display-color;
+    display: block;
     font-size: 12px;
-    float: right;
-    padding-top: 10px;
+    text-align: right;
   }
 }
 
 .answer {
   height: 100px;
   border-bottom: solid 1px $border-color;
+  .votes {
+    display: inline-block;
+  }
   .answer-text {
-    padding-top: 15px;
-    display: block;
+    margin-top: 15px;
+    padding-left: 20px;
+    vertical-align: top;
+    display: inline-block;
     color: $primary;
   }
   .answer-dates {
     color: $display-color;
+    display: block;
     font-size: 12px;
-    float: right;
-    padding-top: 20px;
+    text-align: right;
   }
 }
 

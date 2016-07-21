@@ -26,11 +26,11 @@ module.exports = {
       },
       {
         test: /\.svg|.png$/,
-        loader: 'file?name=[name].[ext]'
+        loader: 'file?name=images/[name].[ext]'
       },
       {
         test: /\.png$/,
-        loader: 'url?limit=300&name=[name].[ext]'
+        loader: 'url-loader?limit=8192&name=images/[name].[ext]'
       }
     ]
   }
