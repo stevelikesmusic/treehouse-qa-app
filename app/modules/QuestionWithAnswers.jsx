@@ -4,6 +4,12 @@ import AnswerForm from './AnswerForm'
 import AnswerList from './AnswerList'
 
 export default React.createClass({
+  childContextTypes: {
+    location: React.PropTypes.string
+  },
+  getChildContext() {
+    return {location: this.props.location.pathname}
+  },
   getInitialState() {
     return {
       question: '',
@@ -23,8 +29,8 @@ export default React.createClass({
       },
       body: JSON.stringify(answer)
     })
-      .then(res => res.json())
-      .then(answer => this.fetchAnswers(this.state.answerBaseUrl))
+    .then(res => res.json())
+    .then(answer => this.fetchAnswers(this.state.answerBaseUrl))
   },
   fetchAnswers(url) {
     fetch(url)

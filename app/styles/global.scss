@@ -55,7 +55,8 @@ header {
 }
 
 .questions-title {
-  margin-top: 20px;
+  margin-top: 50px;
+  margin-bottom: 0;
   padding-bottom: 20px;
   border-bottom: solid 2px darken($border-color, 10%);
 }
@@ -63,6 +64,7 @@ header {
 
 .question {
   height: 100px;
+  padding-top: 20px;
   border-bottom: solid 1px $border-color;
   a {
     color: $primary;
@@ -95,15 +97,18 @@ header {
 
 .answer {
   height: 100px;
+  padding-top: 20px;
   border-bottom: solid 1px $border-color;
   dispay: inline-block;
   .vote-toggle {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
-    .fa {
+    .fa-angle-up, .fa-angle-down {
       margin-left: 8px;
       font-size: 20px;
       color: darken($body-color, 20%);
+      cursor: pointer;
+      width: 2%;
     }
     span {
       background-color: $border-color;
@@ -114,7 +119,7 @@ header {
     }
   }
   .answer-text {
-    margin-top: 15px;
+    margin-top: 18px;
     padding-left: 20px;
     vertical-align: top;
     display: inline-block;
@@ -125,6 +130,9 @@ header {
     display: block;
     font-size: 12px;
     text-align: right;
+    span {
+      color: $primary;
+    }
   }
 }
 

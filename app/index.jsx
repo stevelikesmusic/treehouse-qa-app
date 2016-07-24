@@ -8,6 +8,6 @@ import QuestionWithAnswers from './modules/QuestionWithAnswers'
 render((
   <Router history={browserHistory}>
     <Route path="/" component={Questions} />
-    <Route path="/questions/:qId" component={QuestionWithAnswers} />
+    <Route path="/questions/:qId" components={QuestionWithAnswers} />
   </Router>
 ), document.getElementById('qa'))

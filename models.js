@@ -23,6 +23,8 @@ AnswerSchema.method('update', function(updates, callback) {
 });
 
 AnswerSchema.method('vote', function(vote, callback) {
+  console.log('vote method')
+  console.log(vote)
   if (vote === 'up') {
     this.upVotes++;
   } else {
