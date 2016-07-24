@@ -1,13 +1,17 @@
 import React from 'react'
 import config from '../../config'
+import utility from '../../utility'
 
 export default React.createClass({
   getInitialState() {
     return {answer: ''}
   },
+  
   handleAnswerChange(e) {
+    utility.toggleDisableSubmit(e, 'a-submit')
     this.setState({answer: e.target.value})
   },
+  
   handleSubmit(e) {
     e.preventDefault()
     let answer = this.state.answer.trim()
@@ -25,7 +29,7 @@ export default React.createClass({
           <textarea value={this.state.answer} 
                     onChange={this.handleAnswerChange} 
                     placeholder="Your answer..." />
-          <input type="submit" value="Post Answer" />
+          <input id="a-submit" type="submit" value="Post Answer" disabled />
         </form>
       </div>
     )

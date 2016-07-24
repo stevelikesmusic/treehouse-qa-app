@@ -39,17 +39,22 @@ header {
     font-size: 16px;
   }
 
-  .question-submit {
-    width: 10%;
+  input[type=submit] {
+    width: 90px;
     border-radius: 0 5px 5px 0;
     box-shadow: none;
-    border: solid 5px $button-color;
+    border: none;
     background-color: $button-color;
     color: $background-color; 
     height: 44px;
     font-size: 16px;
+    position: absolute;
+    cursor: pointer;
     &:hover {
-      cursor: pointer;
+      background-color: $link-hover;
+    }
+    &:disabled {
+      background-color: $link-secondary;
     }
   }
 }
@@ -155,6 +160,15 @@ header {
     border: none;
     height: 30px;
     background-color: $button-color;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    &:disabled {
+      background-color: $link-secondary;
+    }
+    &:hover {
+      background-color: $link-hover;
+    }
   }
 }
 

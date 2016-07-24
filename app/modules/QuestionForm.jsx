@@ -1,5 +1,6 @@
 import React from 'react'
 import config from '../../config'
+import utility from '../../utility'
 
 export default React.createClass({
   getInitialState: function() {
@@ -7,6 +8,7 @@ export default React.createClass({
   },
   
   handleQuestionChange(e) {
+    utility.toggleDisableSubmit(e, 'q-submit')
     this.setState({question: e.target.value})
   },
   
@@ -29,7 +31,7 @@ export default React.createClass({
                value={this.state.question} 
                onChange={this.handleQuestionChange} 
                placeholder="What's your question?" />
-        <input className="question-submit" type="submit" value="Ask" />
+        <input id="q-submit" type="submit" value="Ask" disabled />
       </form>
     );
   }
