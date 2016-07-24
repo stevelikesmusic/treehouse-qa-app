@@ -2,6 +2,7 @@ require('../styles/global.scss')
 import React from 'react'
 import Vote from './Vote'
 import config from '../../config'
+import moment from 'moment'
 
 export default React.createClass({
   contextTypes: {
@@ -22,12 +23,14 @@ export default React.createClass({
     .catch(e => console.log(`There was an error with your post: ${e.name}--${e.message}`))
   },
   render() {
+    let createdAt = `${moment(this.props.createdAt).format('MMM Do, YYYY')} at ${moment(this.props.createdAt).format('h:mm a')}`
+    let updatedAt = `${moment(this.props.updatedAt).format('MMM Do, YYYY')} at ${moment(this.props.updatedAt).format('h:mm a')}`
     return (
       <div className="answer">
         <Vote votes={this.props.upVotes} handleVote={this.handleVote} />
         <span className="answer-text">{this.props.answerText}</span>
         <div className="answer-dates">
-          Answered: {this.props.createdAt} <span>|</span> Modified: {this.props.updatedAt}
+          Answered: {createdAt} <span>|</span> Modified: {updatedAt}
         </div>
       </div>
     )
