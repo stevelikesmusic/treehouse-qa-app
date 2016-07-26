@@ -23,8 +23,6 @@ router.param('qId', (req, res, next, id) => {
 
 router.param('aId', (req, res, next, id) => {
   req.answer = req.question.answers.id(id);
-  console.log('answer')
-  console.log(req.answer)
   if (!req.answer) {
     let err = new Error('Not Found');
     err.status = 404;
@@ -78,6 +76,7 @@ router.post('/:qId/answers', (req, res, next) => {
 // PUT /questions/:id/answers/:id
 // Route for updating an answer
 router.put('/:qId/answers/:aId', (req, res, next) => {
+  console.log(req.body)
   req.answer.update(req.body, function(err, result) {
     if (err) return next(err);
     res.json(result);
@@ -99,8 +98,6 @@ router.delete('/:qId/answers/:aId', (req, res) => {
 // Vote on a specific an answer
 router.post('/:qId/answers/:aId/vote-:dir', 
   (req, res, next) => {
-  console.log('route request')
-  console.log(req)
     if (req.params.dir.search(/^(up|down)$/) === -1) {
       let err = new Error(`Not Found using ${req.params.dir}`);
       err.status = 404;

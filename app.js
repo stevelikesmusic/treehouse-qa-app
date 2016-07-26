@@ -11,6 +11,10 @@ const jsonParser = require('body-parser').json;
 const logger = require('morgan');
 
 //app.use('/', express.static(path.join(__dirname, 'public')));
+app.use((req, res, next) => {
+  console.log(req.body)
+  next();
+});
 app.use(logger('dev'));
 app.use(jsonParser());
 
@@ -23,9 +27,11 @@ db.once('open', () => console.log(`db connection successful`));
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Headers, Body');
   if (req.method === 'OPTIONS') {
-    res.header('Access-Control-Header-Methods', 'PUT, POST, DELETE');
+    console.log(req.body)
+    res.header('Access-Control-Header-Methods', 'PUT, POST, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Methods', 'PUT, POST, DELETE, OPTIONS');
     return res.status(200).json({});
   }
   next();

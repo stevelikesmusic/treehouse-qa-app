@@ -10,6 +10,10 @@ body {
   font-family: $body-font;
 }
 
+input[type=text], textarea {
+  font-family: $body-font;
+}
+
 h1, h2, h3 {
   font-family: $display-font;
 }
@@ -45,7 +49,7 @@ header {
     box-shadow: none;
     border: none;
     background-color: $button-color;
-    color: $background-color; 
+    color: $inverse; 
     height: 44px;
     font-size: 16px;
     position: absolute;
@@ -123,13 +127,44 @@ header {
       padding: 7px 5px 5px 5px;
     }
   }
-  .answer-text {
+  .answer-text, {
     margin-top: 18px;
     padding-left: 20px;
     vertical-align: top;
     display: inline-block;
     color: $primary;
   }
+  input[type=button] {
+      width: 70px;
+      text-align: center;
+      display: inline-block;
+      background-color: $negative;
+      color: $inverse;
+      font-size: 12px;
+      float: right;
+      border: none;
+      border-radius: 5px;
+      height: 29px;
+      margin-top: 10px;
+      &:hover {
+        background-color: darken($negative, 10%);
+      }
+    }
+  form {
+    display: inline;
+    input[type=text] {
+      width: 41vw;
+      position: absolute;
+      font-size: 16px;
+      vartical-align: top;
+      margin-left: 9px;
+      margin-top: 12px;
+      padding: 5px 0 5px 10px;
+      background-color: lighten($secondary-label, 25%);
+      border-radius: 5px;
+      border: none;
+    }
+  }  
   .answer-dates {
     color: $display-color;
     display: block;
@@ -154,7 +189,7 @@ header {
     padding-top: 10px;
   }
   input[type=submit] {
-    color: $background-color;
+    color: $inverse;
     font-size: 12px;
     border-radius: 5px;
     border: none;
