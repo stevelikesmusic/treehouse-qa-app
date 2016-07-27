@@ -146,6 +146,7 @@ header {
       border-radius: 5px;
       height: 29px;
       margin-top: 10px;
+      cursor: pointer;
       &:hover {
         background-color: darken($negative, 10%);
       }
@@ -215,6 +216,7 @@ header {
 }
 
 .logo {
+  margin-top: -70px;
   width: 75px;
   display: block;
   text-align: center;

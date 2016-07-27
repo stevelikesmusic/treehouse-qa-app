@@ -1,15 +1,16 @@
 require('../styles/global.scss')
 import React from 'react'
-import { Link } from 'react-router'
-import logo from '../../public/images/logo-1.svg'
-
+import { IndexLink } from 'react-router'
 
 export default React.createClass({
   render() {
     return (
-      <Link to="/">
-        <img className="logo" src={logo} />
-      </Link>
+      <div>
+        <IndexLink to="/">
+          <img className="logo" src="/images/logo-1.svg" />
+        </IndexLink>
+        {this.props.children}
+      </div>
     )
   }
 })

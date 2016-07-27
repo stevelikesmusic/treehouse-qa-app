@@ -5,10 +5,11 @@ module.exports = {
   entry: './app/index.jsx',
   output: {
     filename: 'bundle.js',
-    publicPath: '',
+    publicPath: '/',
     path: 'public'
   },
   resolve: {
+    root: './public',
     extensions: ['', '.js', '.jsx'],
   },
   module: {
