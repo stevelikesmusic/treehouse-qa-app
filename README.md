@@ -1,4 +1,4 @@
-This is a practice app based on Treehouse's Node/Express REST API course (thanks [@chalkers](www.twitter.com/chalkers)!). I completed the course and am building out the front-end in React. 
+This is a practice app based on Treehouse's Node/Express REST API course (thanks [@chalkers](https://www.twitter.com/chalkers)!). I completed the course and am building out the front-end in React. 
 
 To get setup:
 
