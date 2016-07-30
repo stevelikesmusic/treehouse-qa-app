@@ -1,6 +1,6 @@
 import React from 'react'
 import config from '../../config'
-import utility from '../../utility'
+import utility from '../utility'
 
 export default React.createClass({
   getInitialState() {

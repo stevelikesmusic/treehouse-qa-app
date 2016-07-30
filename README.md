@@ -7,4 +7,4 @@ To get setup:
 3. ```npm start``` defaults to the dev server on port 8080 and uses cors headers since the server is on port 3000
 4. ```npm start:prod``` serves everything from port 3000
 
-Tests, authentication, and authorization are the next pieces to follow. 
+Tests, authentication, and authorization (possibly Redux) are the next pieces to follow. 

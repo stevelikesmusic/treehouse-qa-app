@@ -12,7 +12,7 @@ const logger = require('morgan');
 const compression = require('compression');
 
 if (process.env.NODE_ENV === 'production') {
-  app.use('/', express.static(path.join(__dirname, '/public')));
+  app.use('/', express.static(path.join(__dirname, '../public')));
 }
 
 app.use(logger('dev'));
@@ -40,7 +40,7 @@ app.use('/api/questions', router);
 
 if (process.env.NODE_ENV === 'production') {
   app.get('*', function (request, response){
-    response.sendFile(path.resolve(__dirname, 'public', 'index.html'))
+    response.sendFile(path.resolve(__dirname, '../public', 'index.html'))
   })
 }
 

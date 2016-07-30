@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run start:dev",
     "start:dev": "webpack-dev-server --inline --content-base public/ --history-api-fallback --hot",
-    "start:prod": "NODE_ENV=production webpack && node app.js ",
+    "start:prod": "NODE_ENV=production webpack && node server/app.js ",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

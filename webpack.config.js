@@ -2,8 +2,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const production = process.env.NODE_ENV === 'production'
-
-let ExtractTextPlugin = require('extract-text-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: './app/index.jsx',
@@ -45,6 +44,11 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin(),
     new ExtractTextPlugin("global.css", {
       allChucnks: true
-    })
+    }),
+    new webpack.DefinePlugin({
+    'process.env': {
+      'NODE_ENV': JSON.stringify('production')
+    }
+  })
   ] : []
 }
