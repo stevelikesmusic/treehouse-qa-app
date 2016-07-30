@@ -37,7 +37,7 @@ const QuestionSchema = new Schema({
   answers: [AnswerSchema]
 });
 
-QuestionSchema.pre('save', (next) => {
+QuestionSchema.pre('save', function(next) {
   if (this.answers) {
     this.answers.sort(sortAnswers);
   }
